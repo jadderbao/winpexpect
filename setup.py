@@ -9,11 +9,6 @@
 import sys
 from setuptools import setup
 
-
-if sys.version_info[0] == 3:
-    from lib2to3.fixes import fix_types
-    fix_types._TYPE_MAPPING['StringTypes'] = '(str,)'
-
 setup(
     name = 'winpexpect',
     version = '1.5',
@@ -31,6 +26,5 @@ setup(
     py_modules = ['pexpect', 'winpexpect'],
     test_suite = 'nose.collector',
     install_requires = ['pywin32 >= 214'],
-    zip_safe = False,
-    use_2to3 = True
+    zip_safe = False
 )
